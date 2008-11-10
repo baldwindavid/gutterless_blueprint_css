@@ -23,7 +23,7 @@ The Gutterless `box` will even allow nesting of span-x divs, as they will always
 
 ## Simple Tutorial
 
-**Stylesheets** - Place links to the following stylesheets in your page.  Note that the addition of `gutterless.css`:
+**Stylesheets** - Place links to the following stylesheets in your page.  Note the addition of `gutterless.css`:
 
     <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
     <link rel="stylesheet" href="css/blueprint/gutterless.css" type="text/css" media="screen, projection">
@@ -57,7 +57,8 @@ The Gutterless `box` will even allow nesting of span-x divs, as they will always
         News
       </div>
       <div class="span-100">
-        Foo
+        Footer
+      </div>
     </div>
     
 **Padding** - We need some padding around our elements so that the text does not run into the header and the columns to each side.  To do so, we will add a div with the `box` class within each div.  This will add 20 pixels of padding to each.  You now know that the Menu area has exactly 240 pixels (300 - (20 + 20)) of inner width in which to place content.
