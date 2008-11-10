@@ -1,0 +1,25 @@
+/* This fixes the problem with right columns being pushed below in ie6*/
+
+/* -----------------------------------------------------------------------
+
+   Blueprint CSS Framework 0.7.1
+   http://blueprintcss.googlecode.com
+
+   * Copyright (c) 2007-2008. See LICENSE for more info.
+   * See README for instructions on how to use Blueprint.
+   * For credits and origins, see AUTHORS.
+   * This is a compressed file. See the sources in the 'src' directory.
+
+----------------------------------------------------------------------- */
+
+/* ie.css */
+body {text-align:center;}
+.container {text-align:left;}
+* html .span-1, * html .span-2, * html .span-3, * html .span-4, * html .span-5, * html .span-6, * html .span-7, * html .span-8, * html .span-9, * html .span-10, * html .span-11, * html .span-12, * html .span-13, * html .span-14, * html .span-15, * html .span-16, * html .span-17, * html .span-18, * html .span-19, * html .span-20, * html .span-21, * html .span-22, * html .span-23, * html .span-24, * html .span-25, * html .span-26, * html .span-27, * html .span-28, * html .span-29, * html .span-30, * html .span-31, * html .span-32, * html .span-33, * html .span-34, * html .span-35, * html .span-36, * html .span-37, * html .span-38, * html .span-39, * html .span-40, * html .span-41, * html .span-42, * html .span-43, * html .span-44, * html .span-45, * html .span-46, * html .span-47, * html .span-48, * html .span-49, * html .span-50, * html .span-51, * html .span-52, * html .span-53, * html .span-54, * html .span-55, * html .span-56, * html .span-57, * html .span-58, * html .span-59, * html .span-60, * html .span-61, * html .span-62, * html .span-63, * html .span-64, * html .span-65, * html .span-66, * html .span-67, * html .span-68, * html .span-69, * html .span-70, * html .span-71, * html .span-72, * html .span-73, * html .span-74, * html .span-75, * html .span-76, * html .span-77, * html .span-78, * html .span-79, * html .span-80, * html .span-81, * html .span-82, * html .span-83, * html .span-84, * html .span-85, * html .span-86, * html .span-87, * html .span-88, * html .span-89, * html .span-90, * html .span-91, * html .span-92, * html .span-93, * html .span-94, * html .span-95, * html .span-96, * html .span-97, * html .span-98, * html .span-99, * html .span-100, * html .span-101, * html .span-102, * html .span-103, * html .span-104, * html .span-105, * html .span-106, * html .span-107, * html .span-108, * html .span-109, * html .span-110, * html .span-111, * html .span-112, * html .span-113, * html .span-114, * html .span-115, * html .span-116, * html .span-117, * html .span-118, * html .span-119, * html .span-120, * html .span-121, * html .span-122, * html .span-123, * html .span-124, * html .span-125, * html .span-126, * html .span-127, * html .span-128, * html .span-129, * html .span-130, * html .span-131, * html .span-132, * html .span-133, * html .span-134, * html .span-135, * html .span-136, * html .span-137, * html .span-138, * html .span-139, * html .span-140, * html .span-141, * html .span-142, * html .span-143, * html .span-144, * html .span-145, * html .span-146, * html .span-147, * html .span-148, * html .span-149, * html .span-150 {
+overflow-x: hidden; }
+* html legend {margin:-18px -8px 16px 0;padding:0;}
+ol {margin-left:2em;}
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+html>body p code {*white-space:normal;}
+hr {margin:-8px auto 11px;}

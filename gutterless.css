@@ -1,0 +1,49 @@
+.box {
+  background-color: transparent;
+  padding: 20px; }
+
+.box-1 { padding: 10px; }
+.box-2 { padding: 20px; }
+.box-3 { padding: 30px; }
+.box-4 { padding: 40px; }
+.box-5 { padding: 50px; }
+.box-6 { padding: 60px; }
+.box-7 { padding: 70px; }
+.box-8 { padding: 80px; }
+.box-9 { padding: 90px; }
+.box-10 { padding: 100px; }
+
+.left {
+  padding-left: 0;
+  margin-left: 0; }
+
+.right {
+  padding-right: 0;
+  margin-right: 0; }
+
+.top {
+  padding-top: 0;
+  margin-top: 0; }
+
+.bottom {
+  padding-bottom: 0;
+  margin-bottom: 0; }
+
+div.border {
+  margin: -1px; }
+
+div.border-top {
+  margin-top: -1px;
+  border-top: 1px solid #eee; }
+
+div.border-bottom {
+  margin-bottom: -1px;
+  border-bottom: 1px solid #eee; }
+
+div.border-right {
+  margin-right: -1px;
+  border-right: 1px solid #eee; }
+
+div.border-left {
+  margin-left: -1px;
+  border-left: 1px solid #eee; }
