@@ -2,7 +2,7 @@ Gutterless Blueprint CSS
 ========================
 
 ### What?
-Gutterless Blueprint CSS is an opinionated method and slightly supplemented flavor of the Blueprint CSS framework.  It is a Blueprint setup that never needs to be regenerated.  The default is set to 150 columns, each spanning 10px and with a **0px** gutter width.  The width of the layout is specified by overriding the `container` class in your custom stylesheet.  
+Gutterless Blueprint CSS is an opinionated method and slightly supplemented flavor of the [Blueprint CSS framework](http://github.com/joshuaclayton/blueprint-css/tree/master).  It is a Blueprint setup that never needs to be regenerated.  The default is set to 150 columns, each spanning 10px and with a **0px** gutter width.  The width of the layout is specified by overriding the `container` class in your custom stylesheet.  
 
 ### Why?
 
