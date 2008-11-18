@@ -2,7 +2,7 @@ Gutterless Blueprint CSS
 ========================
 
 ### What?
-Gutterless Blueprint CSS is an opinionated method and slightly supplemented flavor of the [Blueprint CSS framework](http://github.com/joshuaclayton/blueprint-css/tree/master).  It is a Blueprint setup that never needs to be regenerated.  The default is set to 150 columns, each spanning 10px and with a **0px** gutter width.  The width of the layout is specified by overriding the `container` class in your custom stylesheet.  
+Gutterless Blueprint CSS is an opinionated method and slightly supplemented flavor of the [Blueprint CSS framework](http://github.com/joshuaclayton/blueprint-css/tree/master).  It is a Blueprint setup that never needs to be regenerated.  The default is set to 150 columns, each spanning 10px and with a **0px** gutter width.  The width of the layout is specified by overriding the `container` class in your custom stylesheet.
 
 ### Why?
 
@@ -107,7 +107,102 @@ You can also limit borders to one, two or three sides of the div with `border-to
 The `border` classes will account for the additional pixel usage and adjust the div accordingly so as not to disrupt the grid.
 
 
-## Caveats
+## The Semantic Grid - Have your Grid and be semantic too!
 
-- This has not been heavily tested as of yet, so use at your own peril.
-- The Gutterless `box` class will disrupt the em-based "baseline" Blueprint default.
+If you use [Sass](http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html) (and you should), then you can use the [Blueprint](http://www.blueprintcss.org/) grid (or other grid systems) and be "semantic" at the same time.  
+
+### Why should I care?
+
+Let us take a look at a very simple [Blueprint](http://www.blueprintcss.org/) layout as an example:
+
+    <div class="container">
+      <div class="span-100">
+        Header
+      </div>
+      <div class="span-30">
+        Menu
+      </div>
+      <div class="span-40">
+        Main Content
+      </div>
+      <div class="span-30">
+        News
+      </div>
+      <div class="span-100">
+        Footer
+      </div>
+    </div>
+
+The major criticism of a [Blueprint](http://www.blueprintcss.org/) layout (and other grid layouts) such as this is that all of these "span-x" tags don't give us a whole lot of insight into the underlying _meaning_ of a specific area of a page.  Rather than naming the area which will contain news with an id of "news", we instead gave it a class like "span-30".  This "span-30" may be just fine for display in Firefox, but may make no sense in a mobile browser that has a lot less screen real estate to work with.  Additionally, calling this area out in Javascript is problematic, because we don't have anything unique to latch on to...and even if we did, our Javascript would be mightily confusing.  Sure, we can fix this problem by tossing in another id or class to add this _meaning_, but that adds unnecessary clutter to our layouts.  Even more problematic, in sites with multiple templates (and partials in Rails) and nested divs, revising the span-x values can quickly become a maintenance nightmare.  Worst of all, there is a nearly cult-like group of semantic evangelists that will deride us to no end for breaking the Internet.
+
+### What's a developer to do?
+
+We know that we like the consistency and solid foundation that [Blueprint](http://www.blueprintcss.org/) gives us to rapidly develop layouts.  We also know the caveats of specifying design details in HTML.  Thanks to a little help from our friend, [Sass](http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html), we can keep the former and cut the latter.
+
+[Sass](http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html) offers a lot of features to more easily manage stylesheets, such as constants, rule nesting and arithmetic.  If you are not using it, I promise you that your stylesheets are much more difficult to maintain than they need to be.  A handy feature of Sass, called "Mixins", allow you to define groups of CSS attributes and include them in multiple selectors throughout a document.
+
+A mixin is defined like so:
+
+    =my-cool-rules
+      :color #999
+      :border 1px solid red
+      :padding 5px
+      
+This mixin can then be used throughout a Sass document like this:
+
+    #some-other-rule
+      :margin-bottom 9px
+      :background-color #FFFF00
+      +my-cool-rules
+      
+The resulting CSS will be compiled to:
+
+    #some-other-rule {
+      margin-bottom: 9px;
+      background-color: #FFFF00;
+      color: #999;
+      border: 1px solid red;
+      padding: 5px;
+    }
+    
+We can leverage the power of mixins to "mixin" the Blueprint "span-x" functionality to a semantic selector rule.  The `semantic_mixins.sass` document in this repository contains mixin declarations for span-x, append-x and prepend-x rules that mimic the rules within a Blueprint stylesheet.  This Sass document was generated specifically for the [Gutterless Blueprint](http://github.com/bilson/gutterless_blueprint_css/tree/master) setup, but this is a method that could be used for any grid system with the help of Sass.
+
+Here is an example span-x mixin declaration:
+    
+    =span-30
+      :width 300px
+      :float left
+      :margin-right 0px
+
+We can use this is in our main Sass document like this:
+
+    #news
+      +span-30
+
+We can do the same for other areas of the page:
+
+    #header
+      +span-100
+    #menu
+      +span-30
+    #main_content
+      +span-40
+    #news
+      +span-30
+    #footer
+      +span-100
+
+If we decide to change the #news section to be 200px in the future, the change only needs to be made in one place.  Also, our layout is not cluttered with extra classes or ids.  And it has _meaning_!  Hooray!  Tell the Semantic Police to get off our backs.
+
+### Installing Semantic Mixins
+
+The simplest way to make use of the semantic mixins is to use the Sass @import directive to import `semantic_mixins.sass` into your main sass file.  Example:
+    
+    stylesheets/sass/application.sass
+    
+    // At top of file
+    @import ../gutterless_blueprint_css/semantic_mixins.sass
+
+    
+    
+
