@@ -18,7 +18,7 @@ Blueprint is great, but I often find that the gutters work against me rather tha
 
 Gutterless suggests copious usage of the `box` class.  The defaults of this class have been overriden from percentage based to exact pixel amounts.  Placing a div with the `box` class inside of a column will set 20 pixels of padding within the div.  There are also box classes with pad values from 10 to 100px.  These classes are, unsurprisingly, named `box-1`, `box-2` (same as `box`), `box-3`...`box-10`.  
 
-The Gutterless `box` will even allow nesting of span-x divs, as they will always have a calculable inner-width divisible by 10.
+The Gutterless `box` will even allow nesting of span-x divs, as they will always have a calculable inner-width divisible by 10.  **Note:**  The precise pixel amounts of the box class will disrupt the vertical rhythm promoted by the Blueprint factory setup.  If this is important to you, the box class can always be overwritten back to default values.  Personally, the efficiency and simplicity of the box class with pixel values is of more value to me than ensuring a perfect vertical rhythm.
 
 
 ## Simple Tutorial
