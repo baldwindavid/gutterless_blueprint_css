@@ -89,20 +89,20 @@ The Gutterless `box` will even allow nesting of span-x divs, as they will always
 **Consistent Spacing** - One issue with the above layout is that the `box` class is adding 20 pixels of right-padding to the Menu area and 20 pixels of left-padding to the Main Content area.  This makes for 40 pixels between the content of the divs.  This may or may not be an issue in your layout, but it is often desirable to have consistent spacing between the outer edges and between content areas.  To solve this problem, we will remove the right-padding of the Menu area by adding the `right` class to the `box` div like so:
 
     <div class="span-30">
-      <div class="box.right">
+      <div class="box right">
         Menu
       </div>
     </div>
     
 We could also use the `left`, `top`, and `bottom` classes to remove other padding on `box` divs.
 
-** Borders ** - If you want to add borders to your columns simply add the `border` class to the div like below:
+**Borders** - If you want to add borders to your columns simply add the `border` class to the div like below:
     
-    <div class="span-10.border">Content</div>
+    <div class="span-10 border">Content</div>
     
 You can also limit borders to one, two or three sides of the div with `border-top`, `border-bottom`, `border-left` and `border-right`:
 
-    <div class="span-10.border-top.border-right">Content</div>
+    <div class="span-10 border-top border-right">Content</div>
     
 The `border` classes will account for the additional pixel usage and adjust the div accordingly so as not to disrupt the grid.
 
